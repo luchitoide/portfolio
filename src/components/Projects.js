@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styled from "styled-components";
 import { FaHtml5, FaCss3Alt, FaJs,FaReact } from "react-icons/fa";
 import { BiLogoTypescript,BiLogoFirebase } from "react-icons/bi";
@@ -21,11 +21,11 @@ const projects = [
     url: "https://todo-list-luchitoide.vercel.app/ ",
   },
   {
-    title: "Proyecto 2",
-    description: "Descripción del proyecto 2",
-    technologies: ["js", "css"],
-    thumbnail: require("../assets/projects/todoList.png"),
-    url: "url-del-proyecto-2",
+    title: "React Shop",
+    description: "A template for a e-commerce website using React using an APi for products details",
+    technologies: ["js", "css", "react"],
+    thumbnail: require("../assets/projects/storeReact.png"),
+    url: "https://luchitoide.github.io/tienda-react/",
   },
   {
     title: "Proyecto 3",
@@ -57,11 +57,16 @@ const ProjectsContainer = styled.section`
 const ProjectList = styled.div`
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Cambiado a flex-start para alinear proyectos arriba */
+  align-items: flex-start;
   gap: 1rem;
   overflow: hidden;
-  width: 700px; /* Cambiado el ancho total para acomodar 2 proyectos */
-  margin: 0 auto; /* Centrado horizontal */
+  width: 100%; /* Ajuste para abarcar el ancho de la pantalla */
+  margin: 0 auto;
+
+  @media (min-width: 600px) {
+    /* Ajusta el ancho total para acomodar 2 proyectos en pantallas grandes */
+    width: 700px;
+  }
 `;
 
 const ProjectCard = styled.div`
@@ -86,6 +91,7 @@ const ProjectCard = styled.div`
     cursor: pointer; /* Cambio de cursor al pasar por el título */
   }
 `;
+
 const TechnologyIcons = styled.div`
   display: flex;
   gap: 0.5rem;
@@ -108,6 +114,10 @@ const NavigationButtons = styled.div`
   width: 100%; /* Ancho completo para abarcar toda la sección */
   max-width: 700px; /* Limitar el ancho para que coincida con el ancho de proyectos */
   margin: 1rem auto 0; /* Centrado horizontal */
+  @media (min-width: 600px) {
+    /* Ajusta el ancho total para acomodar 2 proyectos en pantallas grandes */
+    max-width: 500px;
+  }
 `;
 
 const Button = styled.button`
@@ -126,22 +136,43 @@ const Button = styled.button`
 
 const Projects = () => {
   const [startIndex, setStartIndex] = useState(0);
+  const [projectsToShow, setProjectsToShow] = useState(2);
+  const prevIndex = (startIndex - 1 + projects.length) % projects.length;
+  const nextIndex = (startIndex + 1) % projects.length;
 
   const showPreviousProjects = () => {
-    setStartIndex((prevIndex) => (prevIndex - 1 + projects.length) % projects.length);
+    setStartIndex(prevIndex);
   };
 
   const showNextProjects = () => {
-    setStartIndex((prevIndex) => (prevIndex + 1) % projects.length);
+    setStartIndex(nextIndex);
   };
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth < 600) {
+        setProjectsToShow(1);
+      } else {
+        setProjectsToShow(2);
+      }
+    };
+
+    window.addEventListener("resize", handleResize);
+    handleResize(); // Llamamos a la función al principio para establecer la cantidad inicial
+
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
 
   return (
     <ProjectsContainer>
       <h2 className="text-3xl mb-4 text-center">Mis Proyectos</h2>
-      <ProjectList >
-        {[startIndex, (startIndex + 1) % projects.length].map((index) => (
-          <ProjectCard key={index}>
-            <a href={projects[index].url} target="_blank" rel="noopener noreferrer">
+      <ProjectList>
+        {window.innerWidth < 600
+          ? [startIndex].map((index) => (
+              <ProjectCard key={index}>
+                <a href={projects[index].url} target="_blank" rel="noopener noreferrer">
               <img src={projects[index].thumbnail} alt={projects[index].title} />
             </a>
             <ProjectInfo>
@@ -157,8 +188,28 @@ const Projects = () => {
                 ))}
               </TechnologyIcons>
             </ProjectInfo>
-          </ProjectCard>
-        ))}
+              </ProjectCard>
+            ))
+          : [startIndex, nextIndex].map((index) => (
+              <ProjectCard key={index}>
+                <a href={projects[index].url} target="_blank" rel="noopener noreferrer">
+              <img src={projects[index].thumbnail} alt={projects[index].title} />
+            </a>
+            <ProjectInfo>
+              <a href={projects[index].url} target="_blank" rel="noopener noreferrer">
+                <h3 className="text-xl mb-2 text-center">{projects[index].title}</h3>
+              </a>
+              <p className="text-gray-700">{projects[index].description}</p>
+              <TechnologyIcons>
+                {projects[index].technologies.map((tech, techIndex) => (
+                  <TechnologyIcon key={techIndex}>
+                    {technologyIcons[tech]}
+                  </TechnologyIcon>
+                ))}
+              </TechnologyIcons>
+            </ProjectInfo>
+              </ProjectCard>
+            ))}
       </ProjectList>
       <NavigationButtons>
         <Button onClick={showPreviousProjects}>&#8592;</Button>
