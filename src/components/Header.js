@@ -4,8 +4,13 @@ import styled from 'styled-components';
 const StyledHeader = styled.header`
   background-color: #333;
   color: white;
-  padding: 2rem;
+  padding: 1rem;
   text-align: center;
+  height: 100px;
+  @media (max-width: 665px) {
+    padding: 1rem;
+    height: 80px;
+  }
 `;
 
 const AnimatedTitle = styled.h1`

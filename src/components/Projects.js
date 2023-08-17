@@ -22,7 +22,7 @@ const projects = [
   },
   {
     title: "React Shop",
-    description: "A template for a e-commerce website using React using an APi for products details",
+    description: "A template for a e-commerce website using React and APi for products details",
     technologies: ["js", "css", "react"],
     thumbnail: require("../assets/projects/storeReact.png"),
     url: "https://luchitoide.github.io/tienda-react/",
@@ -51,6 +51,23 @@ const ProjectsContainer = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    animation: fadeInUp 1s ease; /* Agrega una animación de entrada */
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
 `;
 
 
@@ -77,6 +94,7 @@ const ProjectCard = styled.div`
   width: 350px; /* Ajusta el ancho según tus necesidades */
   display: flex;
   flex-direction: column;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 
   img {
     width: 300px; /* Ajusta el tamaño de la miniatura según tus necesidades */
@@ -90,6 +108,11 @@ const ProjectCard = styled.div`
   h3 {
     cursor: pointer; /* Cambio de cursor al pasar por el título */
   }
+
+  &:hover {
+    transform: translateY(-5px); /* Efecto de elevación */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras más pronunciadas */
+  }
 `;
 
 const TechnologyIcons = styled.div`
@@ -100,24 +123,19 @@ const TechnologyIcons = styled.div`
 `;
 
 const TechnologyIcon = styled.div`
-  font-size: 1.5rem;
-  color: #333;
+font-size: 1.5rem;
+color: #333;
+cursor: pointer;
+transition: transform 0.3s ease, color 0.3s ease;
+
+&:hover {
+  color: #ff7f50; /* Cambia el color al pasar el cursor */
+  transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+}
 `;
 
 const ProjectInfo = styled.div`
   flex: 1;
-`;
-
-const NavigationButtons = styled.div`
-  display: flex;
-  justify-content: space-between; /* Distribuir botones en los extremos */
-  width: 100%; /* Ancho completo para abarcar toda la sección */
-  max-width: 700px; /* Limitar el ancho para que coincida con el ancho de proyectos */
-  margin: 1rem auto 0; /* Centrado horizontal */
-  @media (min-width: 600px) {
-    /* Ajusta el ancho total para acomodar 2 proyectos en pantallas grandes */
-    max-width: 500px;
-  }
 `;
 
 const Button = styled.button`
@@ -127,10 +145,29 @@ const Button = styled.button`
   border: none;
   padding: 0.5rem 1rem;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Agrega transform a la transición */
 
   &:hover {
     background-color: #555;
+    transform: scale(1.05); /* Efecto de zoom al pasar el cursor */
+  }
+`;
+
+
+const NavigationButtons = styled.div`
+  display: flex;
+  justify-content: space-between; /* Distribuir botones en los extremos */
+  width: 100%; /* Ancho completo para abarcar toda la sección */
+  max-width: 700px; /* Limitar el ancho para que coincida con el ancho de proyectos */
+  margin: 1rem auto 0; /* Centrado horizontal */
+  @media (max-width: 600px) {
+    /* Ajusta el ancho total para acomodar 2 proyectos en pantallas grandes */
+    max-width: 350px;
+  }
+  ${Button}:hover {
+    background-color: #555;
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
+    transition: background-color 0.3s ease, transform 0.3s ease;
   }
 `;
 
@@ -182,7 +219,7 @@ const Projects = () => {
               <p className="text-gray-700">{projects[index].description}</p>
               <TechnologyIcons>
                 {projects[index].technologies.map((tech, techIndex) => (
-                  <TechnologyIcon key={techIndex}>
+                  <TechnologyIcon key={techIndex} title={tech}>
                     {technologyIcons[tech]}
                   </TechnologyIcon>
                 ))}
@@ -202,7 +239,7 @@ const Projects = () => {
               <p className="text-gray-700">{projects[index].description}</p>
               <TechnologyIcons>
                 {projects[index].technologies.map((tech, techIndex) => (
-                  <TechnologyIcon key={techIndex}>
+                  <TechnologyIcon key={techIndex} title={tech}>
                     {technologyIcons[tech]}
                   </TechnologyIcon>
                 ))}
