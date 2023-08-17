@@ -29,7 +29,7 @@ const AnimatedTitle = styled.h1`
     font-size: 2rem; 
   }
   @media (max-width: 400px) {
-    font-size: 1.8rem; 
+    font-size: 1.7rem; 
   }
 `;
 
