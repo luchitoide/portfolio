@@ -25,7 +25,7 @@ const IntroductionText = styled.p`
   }
 
   @media (max-width: 600px) {
-    font-size: 0.9rem;
+    font-size: 0.83rem;
     width: 100%;
   }
 `;
