@@ -25,7 +25,7 @@ const IntroductionText = styled.p`
   }
 
   @media (max-width: 600px) {
-    font-size: 1rem;
+    font-size: 0.9rem;
     width: 100%;
   }
 `;
@@ -42,7 +42,7 @@ const IntroductionTitle = styled.h2`
   }
 
   @media (max-width: 600px) {
-    font-size: 2rem;
+    font-size: 1.7rem;
     margin-right: 0;
     margin-bottom: 1rem;
   }
