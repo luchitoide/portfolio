@@ -155,28 +155,24 @@ const Projects = () => {
     // Object with parameters
     const params = {
       loop: true,
-      grabCursor: "true",
+      grabCursor: true,
       spaceBetween: 25,
       pagination: {
-        el: ".swiper-pagination",
         clickable: true,
         dynamicBullets: true,
       },
-      navigation: {
-        nextEl: ".swiper-button-next",
-        prevEl: ".swiper-button-prev",
-      },
+      navigation: {},
       breakpoints: {
         0: {
           slidesPerView: 1,
           navigation: {
-            enable: "false",
+            enabled: false,
           },
         },
         750: {
           slidesPerView: 2,
           navigation: {
-            enable: "true",
+            enabled: true,
           },
         },
         1800: {
