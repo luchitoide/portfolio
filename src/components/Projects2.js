@@ -76,7 +76,6 @@ const ProjectList = styled.div`
   justify-content: center;
   align-items: flex-start;
   gap: 1rem;
-  overflow: hidden;
   width: 100%; /* Ajuste para abarcar el ancho de la pantalla */
   margin: 0 auto;
 
