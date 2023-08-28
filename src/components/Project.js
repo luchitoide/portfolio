@@ -2,6 +2,7 @@ import React, { useRef, useState, useEffect } from "react";
 import styled from "styled-components";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
 import { BiLogoTypescript, BiLogoFirebase } from "react-icons/bi";
+import { SiRubyonrails, SiBootstrap } from '@icons-pack/react-simple-icons';
 import { register } from "swiper/element/bundle";
 
 const technologyIcons = {
@@ -11,6 +12,8 @@ const technologyIcons = {
   react: <FaReact />,
   ts: <BiLogoTypescript />,
   fbase: <BiLogoFirebase />,
+  rails: <SiRubyonrails />,
+  bootstrap: <SiBootstrap />,
 };
 
 const projects = [
@@ -25,24 +28,17 @@ const projects = [
   {
     title: "React Shop",
     description:
-      "A template for a e-commerce website using React and APi for products details",
+      "A template for a e-commerce website using React and APi for products details woking on cart",
     technologies: ["js", "css", "react"],
     thumbnail: require("../assets/projects/storeReact.png"),
     url: "https://luchitoide.github.io/tienda-react/",
   },
   {
-    title: "Proyecto 3",
-    description: "Descripción del proyecto 3",
-    technologies: ["js", "css"],
-    thumbnail: require("../assets/projects/todoList.png"),
-    url: "url-del-proyecto-2",
-  },
-  {
-    title: "Proyecto 4",
-    description: "Descripción del proyecto 4",
-    technologies: ["js", "css"],
-    thumbnail: require("../assets/projects/todoList.png"),
-    url: "url-del-proyecto-2",
+    title: "Rails Blog",
+    description: "A simple blog created with ruby on rails, allow to create posts and comments",
+    technologies: ["rails","js", "css","bootstrap"],
+    thumbnail: require("../assets/projects/blog.png"),
+    url: "https://blogsito.onrender.com/",
   },
 
   // Agrega más proyectos aquí
