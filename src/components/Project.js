@@ -1,8 +1,8 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
 import { BiLogoTypescript, BiLogoFirebase } from "react-icons/bi";
-import { SiRubyonrails, SiBootstrap } from '@icons-pack/react-simple-icons';
+import { SiRubyonrails, SiBootstrap, SiNextdotjs } from '@icons-pack/react-simple-icons';
 import { register } from "swiper/element/bundle";
 
 const technologyIcons = {
@@ -10,33 +10,42 @@ const technologyIcons = {
   css: <FaCss3Alt />,
   js: <FaJs />,
   react: <FaReact />,
-  ts: <BiLogoTypescript />,
-  fbase: <BiLogoFirebase />,
+  typescript: <BiLogoTypescript />,
+  firebase: <BiLogoFirebase />,
   rails: <SiRubyonrails />,
   bootstrap: <SiBootstrap />,
+  nextjs: <SiNextdotjs/>,
 };
 
 const projects = [
   {
     title: "To Do List",
     description:
-      "A simple to do list app using react + typecript + redux and firebase",
-    technologies: ["html", "css", "react", "ts", "fbase"],
+      "A simple to do list app using React + Typecript + Redux and firebase.",
+    technologies: ["html", "css", "react", "typescript", "firebase"],
     thumbnail: require("../assets/projects/todoList.png"),
     url: "https://todo-list-luchitoide.vercel.app/ ",
   },
   {
     title: "React Shop",
     description:
-      "A template for a e-commerce website using React and APi for products details woking on cart",
+      "A template for a e-commerce website using React and API for products details woking on cart.",
     technologies: ["js", "css", "react"],
     thumbnail: require("../assets/projects/storeReact.png"),
     url: "https://luchitoide.github.io/tienda-react/",
   },
   {
     title: "Rails Blog",
-    description: "A simple blog created with ruby on rails, allow to create posts and comments",
+    description: "A simple blog created with Ruby on Rails, allowed to create posts and comments.",
     technologies: ["rails","js", "css","bootstrap"],
+    thumbnail: require("../assets/projects/blog.png"),
+    url: "https://blogsito.onrender.com/",
+  },
+
+  {
+    title: "NextJs Live Chat",
+    description: "A live chat with image attachment created with Next.js + Typescript using Firebase for Authentication, Storage, and Hosting",
+    technologies: ["nextjs","firebase", "css", "typescript"],
     thumbnail: require("../assets/projects/blog.png"),
     url: "https://blogsito.onrender.com/",
   },
