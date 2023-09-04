@@ -46,8 +46,8 @@ const projects = [
     title: "NextJs Live Chat",
     description: "A live chat with image attachment created with Next.js + Typescript using Firebase for Authentication, Storage, and Hosting",
     technologies: ["nextjs","firebase", "css", "typescript"],
-    thumbnail: require("../assets/projects/blog.png"),
-    url: "https://blogsito.onrender.com/",
+    thumbnail: require("../assets/projects/chat.png"),
+    url: "https://funny-chat-16bf8.firebaseapp.com/",
   },
 
   // Agrega más proyectos aquí
