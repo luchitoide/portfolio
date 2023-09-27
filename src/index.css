@@ -17,12 +17,6 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.swiper-button-next:hover{
-  color: #a3162e;
-}
-.swiper-button-prev:hover{
-  color: #a3162e;
-}
 
 @tailwind base;
 @tailwind components;

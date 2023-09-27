@@ -17,6 +17,7 @@ const IntroductionText = styled.p`
   font-size: 1.2rem;
   width: 60%;
   margin-left: 10px;
+  text-wrap: balance;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Efecto de sombra al texto */
 
   @media (max-width: 740px) {
@@ -67,9 +68,10 @@ const Introduction = () => {
           Luis Ramirez: Desarrollador Full Stack
         </IntroductionTitle>
         <IntroductionText>
-          Ingeniero con pasion por la tecnologia, amante de los videojuegos y la
-          programacion, aprendiendo cada dia mas y mas buscando la creacion de
-          soluciones innovadoras.
+          Ingeniero con pasión por la tecnología, autodidacta, y enfoque
+          especializado en el desarrollo backend. Poseo amplios conocimientos en
+          Python y Javascript, incluyendo diversos frameworks como React, C#
+          .NET y Ruby on Rails, entre otros.
         </IntroductionText>
       </div>
       <IntroductionImage

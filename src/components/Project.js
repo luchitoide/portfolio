@@ -2,7 +2,11 @@ import React, { useRef, useEffect } from "react";
 import styled from "styled-components";
 import { FaHtml5, FaCss3Alt, FaJs, FaReact } from "react-icons/fa";
 import { BiLogoTypescript, BiLogoFirebase } from "react-icons/bi";
-import { SiRubyonrails, SiBootstrap, SiNextdotjs } from '@icons-pack/react-simple-icons';
+import {
+  SiRubyonrails,
+  SiBootstrap,
+  SiNextdotjs,
+} from "@icons-pack/react-simple-icons";
 import { register } from "swiper/element/bundle";
 
 const technologyIcons = {
@@ -14,7 +18,7 @@ const technologyIcons = {
   firebase: <BiLogoFirebase />,
   rails: <SiRubyonrails />,
   bootstrap: <SiBootstrap />,
-  nextjs: <SiNextdotjs/>,
+  nextjs: <SiNextdotjs />,
 };
 
 const projects = [
@@ -36,20 +40,39 @@ const projects = [
   },
   {
     title: "Rails Blog",
-    description: "A simple blog created with Ruby on Rails, allowed to create posts and comments.",
-    technologies: ["rails","js", "css","bootstrap"],
+    description:
+      "A simple blog created with Ruby on Rails, allowed to create posts and comments.",
+    technologies: ["rails", "js", "css", "bootstrap"],
     thumbnail: require("../assets/projects/blog.png"),
     url: "https://blogsito.onrender.com/",
   },
 
   {
     title: "NextJs Live Chat",
-    description: "A live chat with image attachment created with Next.js + Typescript using Firebase for Authentication, Storage, and Hosting",
-    technologies: ["nextjs","firebase", "css", "typescript"],
+    description:
+      "A live chat with image attachment created with Next.js + Typescript using Firebase for Authentication, Storage, and Hosting",
+    technologies: ["nextjs", "firebase", "css", "typescript"],
     thumbnail: require("../assets/projects/chat.png"),
     url: "https://funny-chat-16bf8.firebaseapp.com/",
   },
 
+  {
+    title: "Project 5",
+    description:
+      "A live chat with image attachment created with Next.js + Typescript using Firebase for Authentication, Storage, and Hosting",
+    technologies: ["nextjs", "firebase", "css", "typescript"],
+    thumbnail: require("../assets/projects/chat.png"),
+    url: "https://funny-chat-16bf8.firebaseapp.com/",
+  },
+
+  {
+    title: "Rails 6",
+    description:
+      "A simple blog created with Ruby on Rails, allowed to create posts and comments.",
+    technologies: ["rails", "js", "css", "bootstrap"],
+    thumbnail: require("../assets/projects/blog.png"),
+    url: "https://blogsito.onrender.com/",
+  },
   // Agrega más proyectos aquí
 ];
 
@@ -79,27 +102,22 @@ const ProjectsContainer = styled.section`
 `;
 
 const Container = styled.div`
-  max-width: 780px;
-  width: 100%;
+  max-width: 830px;
   padding: 40px 0;
   @media (min-width: 1800px) {
-    /* Ajusta el ancho total para acomodar 2 proyectos en pantallas grandes */
-    max-width: 1150px;
+    max-width: 1245px;
   }
   @media (max-width: 750px) {
-    /* Ajusta el ancho total para acomodar 2 proyectos en pantallas grandes */
-    max-width: 420px;
+    max-width: 390px;
   }
 `;
 
-const ProjectList = styled.div`
-  margin: 0 40px;
-  overflow: hidden;
-  border-radius: 10px;
-`;
+const ProjectList = styled.div``;
 
 const ProjectCard = styled.div`
   background-color: white;
+  max-width: 390px;
+  height: 590px;
   border-radius: 10px;
   padding: 1.5rem;
   display: flex;
@@ -108,12 +126,12 @@ const ProjectCard = styled.div`
   justify-content: center;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-wrap: balance;
+  white-space: unset;
   img {
     width: 300px; /* Ajusta el tamaño de la miniatura según tus necesidades */
-    height: 350px;
-    object-fit: cover;
+    height: 400px;
     border-radius: 5px;
-    margin-right: 1rem;
     cursor: pointer; /* Cambio de cursor al pasar por la imagen */
   }
 
@@ -159,9 +177,17 @@ const Projects = () => {
 
     // Object with parameters
     const params = {
+      injectStyles: [
+        `
+        :host {
+          --swiper-theme-color: #84fab0;
+          
+        }
+        `,
+      ],
+      spaceBetween: 25,
       loop: true,
       grabCursor: true,
-      spaceBetween: 25,
       pagination: {
         clickable: true,
         dynamicBullets: true,
@@ -219,14 +245,16 @@ const Projects = () => {
                         {project.title}
                       </h3>
                     </a>
-                    <p className="text-gray-700">{project.description}</p>
-                    <TechnologyIcons>
-                      {project.technologies.map((tech, techIndex) => (
-                        <TechnologyIcon key={techIndex} title={tech}>
-                          {technologyIcons[tech]}
-                        </TechnologyIcon>
-                      ))}
-                    </TechnologyIcons>
+                    <div>
+                      <p className="text-gray-700">{project.description}</p>
+                      <TechnologyIcons>
+                        {project.technologies.map((tech, techIndex) => (
+                          <TechnologyIcon key={techIndex} title={tech}>
+                            {technologyIcons[tech]}
+                          </TechnologyIcon>
+                        ))}
+                      </TechnologyIcons>
+                    </div>
                   </ProjectInfo>
                 </ProjectCard>
                 <div class="swiper-button-next swiper-navBtn"></div>
