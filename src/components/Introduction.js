@@ -55,6 +55,7 @@ const IntroductionText = styled.p`
 
   @media (max-width: 600px) {
     font-size: 0.83rem;
+    margin-top: 10px;
   }
 `;
 
@@ -93,7 +94,7 @@ const IntroductionTitle = styled.h2`
   }
 
   @media (max-width: 600px) {
-    font-size: 1.7rem;
+    font-size: 1.4rem;
     margin: 1rem auto 0; /* Agrega un margen superior */
   }
 `;
