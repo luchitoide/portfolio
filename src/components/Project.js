@@ -59,30 +59,30 @@ const projects = [
   {
     title: "Project 5",
     description:
-      "A live chat with image attachment created with Next.js + Typescript using Firebase for Authentication, Storage, and Hosting",
+      "Discord Bot with NodeJs based in the Pokemon series",
     technologies: ["nextjs", "firebase", "css", "typescript"],
-    thumbnail: require("../assets/projects/chat.png"),
+    thumbnail: "https://www.provincia.vicenza.it/immagini/work_in_porgress_.jpg/image",
     url: "https://funny-chat-16bf8.firebaseapp.com/",
   },
 
   {
-    title: "Rails 6",
+    title: "Project 6",
     description:
-      "A simple blog created with Ruby on Rails, allowed to create posts and comments.",
+      "thinking....",
     technologies: ["rails", "js", "css", "bootstrap"],
-    thumbnail: require("../assets/projects/blog.png"),
+    thumbnail: "https://www.provincia.vicenza.it/immagini/work_in_porgress_.jpg/image",
     url: "https://blogsito.onrender.com/",
   },
   // Agrega más proyectos aquí
 ];
 
 const ProjectsContainer = styled.section`
-  background-color: #f4f4f4;
   padding: 2rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
 
   h2 {
     margin-bottom: 1rem;
@@ -115,7 +115,7 @@ const Container = styled.div`
 const ProjectList = styled.div``;
 
 const ProjectCard = styled.div`
-  background-color: white;
+  background-color: #222;
   max-width: 390px;
   height: 590px;
   border-radius: 10px;
@@ -154,7 +154,7 @@ const TechnologyIcons = styled.div`
 
 const TechnologyIcon = styled.div`
   font-size: 1.5rem;
-  color: #333;
+  color: #999;
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
 
@@ -221,7 +221,7 @@ const Projects = () => {
 
   return (
     <ProjectsContainer>
-      <h2 className="text-4xl mb-4 text-center">Mis Proyectos</h2>
+      <h2 className="text-4xl mb-4 text-center text-white">Mis Proyectos</h2>
       <Container>
         <ProjectList>
           <swiper-container init="false" ref={swiperRef}>
@@ -241,12 +241,12 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <h3 className="text-xl mb-2 text-center">
+                      <h3 className="text-xl mb-2 text-center text-white">
                         {project.title}
                       </h3>
                     </a>
                     <div>
-                      <p className="text-gray-700">{project.description}</p>
+                      <p className="text-white">{project.description}</p>
                       <TechnologyIcons>
                         {project.technologies.map((tech, techIndex) => (
                           <TechnologyIcon key={techIndex} title={tech}>
