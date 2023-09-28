@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Introduction from "./components/Introduction";
 import Projects from "./components/Project";
+import About from "./components/About";
 import GlobalStyles from "./styles/globalStyles";
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
         <Header />
       </div>
       <Introduction  />
+      <About />
       <Projects />
     </div>
   );

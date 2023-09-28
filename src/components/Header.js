@@ -65,7 +65,7 @@ const Header = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ["inicio", "proyectos", "otraSeccion"]; // Agrega las IDs de tus secciones aquí
+      const sections = ["inicio", "proyectos", "about"]; // Agrega las IDs de tus secciones aquí
       const scrollPosition = window.scrollY;
 
       // Itera a través de las secciones y verifica cuál está en la parte superior de la ventana
@@ -113,6 +113,12 @@ const Header = () => {
             onClick={() => handleNavLinkClick("inicio")}
           >
             Inicio
+          </NavLink>
+          <NavLink
+            isActive={activeSection === "about"}
+            onClick={() => handleNavLinkClick("about")}
+          >
+            Sobre mi
           </NavLink>
           <NavLink
             isActive={activeSection === "proyectos"}
