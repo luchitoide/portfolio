@@ -22,20 +22,14 @@ const IntroductionContainer = styled.section`
   }
 `;
 
-const IntroductionTextContainer = styled.div`
-  width: 60%;
-  @media (max-width: 850px) {
-    width: 100%;
-  }
-`;
 
 const IntroductionText = styled.p`
   font-size: 1.2rem;
   text-wrap: balance;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Efecto de sombra al texto */
-  opacity: 0; /* Estado inicial: completamente transparente */
-  animation: fadeInText 1s ease forwards;
-  animation-delay: 3s; /* Agrega un retraso de 2 segundos antes de comenzar la animación */
+  width: 60%;
+  animation: fadeInText 5s ease backwards;
+  animation-delay: 3s;
 
   @keyframes fadeInText {
     from {
@@ -48,9 +42,12 @@ const IntroductionText = styled.p`
     }
   }
 
+  @media (max-width: 850px) {
+    width: 100%;
+  }
+
   @media (max-width: 740px) {
     font-size: 1.1rem;
-    
   }
 
   @media (max-width: 600px) {
@@ -66,8 +63,7 @@ const IntroductionTitle = styled.h2`
   white-space: nowrap;
   overflow: hidden;
   border-right: 2px solid white; /* Simula un cursor escribiendo */
-  animation: typing 3s steps(50, end),
-    /* Agrega una animación de escritura */ blink-caret 0.5s step-end infinite; /* Agrega una animación de cursor parpadeante */
+  animation: typing 3s steps(50, end), blink-caret 0.5s step-end infinite;
 
   @keyframes typing {
     from {
@@ -105,7 +101,6 @@ const PersonalContainer = styled.div`
   align-items: center;
   justify-content: center;
   width: 100%;
-  
 `;
 
 const IntroductionImage = styled.img`
@@ -139,19 +134,17 @@ const SocialLink = styled.a`
 
 const Introduction = () => {
   return (
-    <IntroductionContainer>
+    <IntroductionContainer id="inicio">
       <div>
         <IntroductionTitle>
           Luis Ramirez : Desarrollador Full Stack
         </IntroductionTitle>
-        <IntroductionTextContainer>
-          <IntroductionText>
-            Ingeniero con pasión por la tecnología, autodidacta, y enfoque
-            especializado en el desarrollo backend. Poseo amplios conocimientos
-            en Python y Javascript, incluyendo diversos frameworks como React,
-            C# .NET y Ruby on Rails, entre otros.
-          </IntroductionText>
-        </IntroductionTextContainer>
+        <IntroductionText>
+          Ingeniero con pasión por la tecnología, autodidacta, y enfoque
+          especializado en el desarrollo backend. Poseo amplios conocimientos en
+          Python y Javascript, incluyendo diversos frameworks como React, C#
+          .NET y Ruby on Rails, entre otros.
+        </IntroductionText>
       </div>
       <PersonalContainer>
         <IntroductionImage

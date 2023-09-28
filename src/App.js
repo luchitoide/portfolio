@@ -8,10 +8,10 @@ function App() {
   return (
     <div className="max-w-7xl m-auto ">
       <GlobalStyles />
-      <div className="fixed z-1000 w-full max-w-7xl">
+      <div className="fixed z-100 w-full max-w-7xl">
         <Header />
       </div>
-      <Introduction />
+      <Introduction  />
       <Projects />
     </div>
   );

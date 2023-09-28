@@ -83,6 +83,7 @@ const ProjectsContainer = styled.section`
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  min-height: 100vh;
 
   h2 {
     margin-bottom: 1rem;
@@ -220,7 +221,7 @@ const Projects = () => {
   }, []);
 
   return (
-    <ProjectsContainer>
+    <ProjectsContainer id="proyectos">
       <h2 className="text-4xl mb-4 text-center text-white">Mis Proyectos</h2>
       <Container>
         <ProjectList>
