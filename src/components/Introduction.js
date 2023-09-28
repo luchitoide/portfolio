@@ -93,6 +93,11 @@ const IntroductionTitle = styled.h2`
     font-size: 1.4rem;
     margin: 1rem auto 0; /* Agrega un margen superior */
   }
+
+  @media (max-width: 400px) {
+    font-size: 1.2rem;
+    margin: 1rem auto 0; /* Agrega un margen superior */
+  }
 `;
 
 const PersonalContainer = styled.div`
