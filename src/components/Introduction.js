@@ -28,7 +28,7 @@ const IntroductionText = styled.p`
   text-wrap: balance;
   text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3); /* Efecto de sombra al texto */
   width: 60%;
-  animation: fadeInText 5s ease backwards;
+  animation: fadeInText 2s ease backwards;
   animation-delay: 3s;
 
   @keyframes fadeInText {

@@ -108,8 +108,11 @@ const Container = styled.div`
   @media (min-width: 1800px) {
     max-width: 1245px;
   }
-  @media (max-width: 750px) {
+  @media (max-width: 850px) {
     max-width: 390px;
+  }
+  @media (max-width: 400px) {
+    max-width: 340px;
   }
 `;
 
@@ -144,6 +147,16 @@ const ProjectCard = styled.div`
     transform: translateY(-5px); /* Efecto de elevación */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Sombras más pronunciadas */
   }
+
+  @media (max-width: 400px) {
+    max-width: 360px;
+    height: 540px;
+    img {
+      width: 260px; /* Ajusta el tamaño de la miniatura según tus necesidades */
+      height: 350px;
+    }
+  }
+  
 `;
 
 const TechnologyIcons = styled.div`
@@ -196,12 +209,13 @@ const Projects = () => {
       navigation: {},
       breakpoints: {
         0: {
+          spaceBetween: 0,
           slidesPerView: 1,
           navigation: {
             enabled: false,
           },
         },
-        750: {
+        850: {
           slidesPerView: 2,
           navigation: {
             enabled: true,
