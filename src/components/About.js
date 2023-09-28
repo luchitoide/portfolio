@@ -9,6 +9,7 @@ const AboutSection = styled.section`
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
 `;
 
 const ContentWrapper = styled.div`
@@ -35,7 +36,7 @@ const ExperienceContainer = styled.div`
 `;
 
 const EducationItem = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   padding: 1rem;
   background-color: #222;
   color: rgb(255 255 255);
@@ -61,7 +62,7 @@ const Date = styled.p`
 `;
 
 const ExperienceItem = styled.div`
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
   padding: 1rem;
   background-color: #222;
   color: rgb(255 255 255);
@@ -89,7 +90,7 @@ const ExperienceDate = styled.p`
 const About = () => {
   return (
     <AboutSection id="about">
-      <h2 className="text-4xl mb-4 text-center text-white">Sobre Mi</h2>
+      <h2 className="text-4xl mb-10 text-center text-white">Sobre Mi</h2>
       <ContentWrapper>
         <EducationContainer>
         <EducationItem>
