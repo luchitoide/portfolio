@@ -125,7 +125,7 @@ const SocialIcons = styled.div`
 `;
 
 const SocialLink = styled.a`
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   color: #999;
   cursor: pointer;
   transition: transform 0.3s ease, color 0.3s ease;
@@ -144,7 +144,7 @@ const Introduction = () => {
           Luis Ramirez : Desarrollador Full Stack
         </IntroductionTitle>
         <IntroductionText>
-          Ingeniero con pasión por la tecnología, autodidacta, y enfoque
+          Ingeniero con pasión por la tecnología, autodidacta y enfoque
           especializado en el desarrollo backend. Poseo conocimientos en varios
           lenguajes como Python, C# .NET y Ruby on Rails, y Javascript,
           incluyendo diversos frameworks como React y NextJs.

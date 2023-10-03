@@ -88,12 +88,14 @@ const Header = () => {
     // Aquí puedes agregar la lógica para cambiar el tema (clase de CSS, contexto, etc.).
     if (!isDarkTheme) {
       document.documentElement.style.setProperty("--background-color", "#fff");
+      document.documentElement.style.setProperty("--background-color-alt", "#aaa");
       document.documentElement.style.setProperty("--text-color", "#333");
       document.documentElement.style.setProperty("--project-color", "#ccc");
     } else {
       document.documentElement.style.setProperty("--background-color", "#333");
+      document.documentElement.style.setProperty("--background-color-alt", "#444");
       document.documentElement.style.setProperty("--text-color", "#fff");
-      document.documentElement.style.setProperty("--project-color", "#333");
+      document.documentElement.style.setProperty("--project-color", "#222");
     }
   };
 
@@ -109,7 +111,7 @@ const Header = () => {
 
   return (
     <StyledNavbar>
-      <Logo>Portfolio</Logo>
+      <Logo>Portafolio</Logo>
       <div className="flex">
         <NavLinks>
           <NavLink

@@ -1,5 +1,6 @@
 :root {
   --background-color: #333; /* Color de fondo oscuro predeterminado */
+  --background-color-alt: #444;
   --text-color: white;
   --project-color:#222;
   
