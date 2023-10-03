@@ -87,7 +87,7 @@ const ProjectsContainer = styled.section`
 
   h2 {
     margin-bottom: 1rem;
-    animation: fadeInUp 1s ease; /* Agrega una animación de entrada */
+    color
   }
 
   @keyframes fadeInUp {
@@ -119,7 +119,7 @@ const Container = styled.div`
 const ProjectList = styled.div``;
 
 const ProjectCard = styled.div`
-  background-color: #222;
+  background-color: var(--project-color);
   max-width: 390px;
   height: 590px;
   border-radius: 10px;
@@ -236,7 +236,7 @@ const Projects = () => {
 
   return (
     <ProjectsContainer id="proyectos">
-      <h2 className="text-4xl mb-4 text-center text-white">Mis Proyectos</h2>
+      <h2 className="text-4xl mb-4 text-center">Mis Proyectos</h2>
       <Container>
         <ProjectList>
           <swiper-container init="false" ref={swiperRef}>
@@ -256,12 +256,12 @@ const Projects = () => {
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      <h3 className="text-xl mb-2 text-center text-white">
+                      <h3 className="text-xl mb-2 text-center">
                         {project.title}
                       </h3>
                     </a>
                     <div>
-                      <p className="text-white">{project.description}</p>
+                      <p>{project.description}</p>
                       <TechnologyIcons>
                         {project.technologies.map((tech, techIndex) => (
                           <TechnologyIcon key={techIndex} title={tech}>
@@ -272,8 +272,6 @@ const Projects = () => {
                     </div>
                   </ProjectInfo>
                 </ProjectCard>
-                <div class="swiper-button-next swiper-navBtn"></div>
-                <div class="swiper-button-prev swiper-navBtn"></div>
               </swiper-slide>
             ))}
           </swiper-container>

@@ -4,7 +4,6 @@ import { FaSun, FaMoon } from "react-icons/fa"; // Importa iconos para los temas
 
 const StyledNavbar = styled.nav`
   backdrop-filter: blur(5px);
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -28,11 +27,9 @@ const NavLinks = styled.div`
 const NavLink = styled.a`
   font-size: 1.1rem;
   color: ${(props) =>
-    props.isActive ? "#ff7f50" : "white"}; /* Cambia el color si está activo */
+    props.isActive ? "#ff7f50" : props.isDarkTheme ? "white" : "black"};
   text-decoration: ${(props) =>
-    props.isActive
-      ? "underline"
-      : "none"}; /* Agrega subrayado si está activo */
+    props.isActive ? "underline" : "none"};
   font-weight: bold;
   cursor: pointer;
   transition: color 0.3s ease;
@@ -50,7 +47,6 @@ const ThemeToggle = styled.button`
   margin-left: 50px;
   border: none;
   font-size: 1.5rem;
-  color: white;
   cursor: pointer;
   transition: color 0.3s ease;
 
@@ -81,7 +77,6 @@ const Header = () => {
         }
       }
     };
-
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -93,8 +88,12 @@ const Header = () => {
     // Aquí puedes agregar la lógica para cambiar el tema (clase de CSS, contexto, etc.).
     if (!isDarkTheme) {
       document.documentElement.style.setProperty("--background-color", "#fff");
+      document.documentElement.style.setProperty("--text-color", "#333");
+      document.documentElement.style.setProperty("--project-color", "#ccc");
     } else {
       document.documentElement.style.setProperty("--background-color", "#333");
+      document.documentElement.style.setProperty("--text-color", "#fff");
+      document.documentElement.style.setProperty("--project-color", "#333");
     }
   };
 
@@ -116,18 +115,21 @@ const Header = () => {
           <NavLink
             isActive={activeSection === "inicio"}
             onClick={() => handleNavLinkClick("inicio")}
+            isDarkTheme={!isDarkTheme}
           >
             Inicio
           </NavLink>
           <NavLink
             isActive={activeSection === "about"}
             onClick={() => handleNavLinkClick("about")}
+            isDarkTheme={!isDarkTheme}
           >
             Sobre mi
           </NavLink>
           <NavLink
             isActive={activeSection === "proyectos"}
             onClick={() => handleNavLinkClick("proyectos")}
+            isDarkTheme={!isDarkTheme}
           >
             Proyectos
           </NavLink>

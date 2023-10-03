@@ -5,7 +5,6 @@ import { BiMailSend } from "react-icons/bi";
 import { SiLinkedin, SiGithub } from "@icons-pack/react-simple-icons";
 
 const IntroductionContainer = styled.section`
-  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -62,7 +61,7 @@ const IntroductionTitle = styled.h2`
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Efecto de sombra al título */
   white-space: nowrap;
   overflow: hidden;
-  border-right: 2px solid white; /* Simula un cursor escribiendo */
+  border-right: 2px solid var(--text-color); /* Simula un cursor escribiendo */
   animation: typing 3s steps(50, end), blink-caret 0.5s step-end infinite;
 
   @keyframes typing {
@@ -80,7 +79,7 @@ const IntroductionTitle = styled.h2`
       border-color: transparent;
     }
     50% {
-      border-color: white;
+      border-color: var(--text-color);
     }
   }
 
