@@ -146,7 +146,7 @@ const Introduction = () => {
         <IntroductionText>
           Ingeniero con pasión por la tecnología, autodidacta y enfoque
           especializado en el desarrollo backend. Poseo conocimientos en varios
-          lenguajes como Python, C# .NET y Ruby on Rails, y Javascript,
+          lenguajes como Python, C# .NET, Ruby on Rails y Javascript,
           incluyendo diversos frameworks como React y NextJs.
         </IntroductionText>
       </div>

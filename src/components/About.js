@@ -1,5 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import {
+  FaGraduationCap, // Importa ícono para estudios
+  FaBriefcase, // Importa ícono para experiencia
+} from "react-icons/fa";
 
 const AboutSection = styled.section`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -33,6 +37,20 @@ const EducationContainer = styled.div`
 const VerticalLine = styled.div`
   border-left: 4px solid #ff7f50;
   height: 500px;
+  position: relative;
+`;
+
+const Circle = styled.div`
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  background-color: var(--background-color-alt);
+  border: 3px solid #ff7f50; /* Borde del círculo */
+  border-radius: 50%; /* Para hacerlo circular */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 `;
 
 const ExperienceContainer = styled.div`
@@ -113,7 +131,17 @@ const About = () => {
             <Date> Enero 2012- Diciembre 2018</Date>
           </EducationItem>
         </EducationContainer>
-        <VerticalLine />
+        <VerticalLine>
+          <Circle style={{ top: "20%", transform: "translateX(-57%)" }}>
+            <FaGraduationCap /> {/* Icono para estudios */}
+          </Circle>
+          <Circle style={{ top: "50%", transform: "translateX(-57%)" }}>
+            <FaBriefcase /> {/* Icono para estudios */}
+          </Circle>
+          <Circle style={{ top: "80%", transform: "translateX(-57%)" }}>
+            <FaGraduationCap /> {/* Icono para experiencia */}
+          </Circle>
+        </VerticalLine>
         <ExperienceContainer>
           <ExperienceItem>
             <Position>Tutor de Programación</Position>
