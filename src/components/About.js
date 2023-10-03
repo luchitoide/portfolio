@@ -26,7 +26,7 @@ const ContentWrapper = styled.div`
   justify-content: space-between;
   align-items: center;
   width: 100%;
-  max-width: 800px;
+  max-width: 820px;
 `;
 
 const EducationContainer = styled.div`
@@ -42,15 +42,15 @@ const VerticalLine = styled.div`
 
 const Circle = styled.div`
   position: absolute;
-  width: 30px;
-  height: 30px;
+  width: 35px;
+  height: 35px;
   background-color: var(--background-color-alt);
   border: 3px solid #ff7f50; /* Borde del círculo */
   border-radius: 50%; /* Para hacerlo circular */
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 18px;
+  font-size: 20px;
 `;
 
 const ExperienceContainer = styled.div`
@@ -60,6 +60,7 @@ const ExperienceContainer = styled.div`
 
 const EducationItem = styled.div`
   margin-bottom: 2rem;
+  margin-right: 1rem;
   padding: 1rem;
   background-color: #222;
   color: rgb(255 255 255);
@@ -85,6 +86,7 @@ const Date = styled.p`
 
 const ExperienceItem = styled.div`
   margin-bottom: 2rem;
+  margin-left: 1rem;
   padding: 1rem;
   background-color: #222;
   color: rgb(255 255 255);
@@ -107,6 +109,7 @@ const ExperienceDate = styled.p`
   font-size: 16px;
   color: #555;
 `;
+
 
 const About = () => {
   return (
