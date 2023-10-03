@@ -194,7 +194,7 @@ const Projects = () => {
       injectStyles: [
         `
         :host {
-          --swiper-theme-color: #84fab0;
+          --swiper-theme-color: #ff7f50;
           
         }
         `,

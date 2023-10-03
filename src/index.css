@@ -1,9 +1,14 @@
+:root {
+  --background-color: #333; /* Color de fondo oscuro predeterminado */
+}
+
 #root {
   min-width: 340px;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
-  background-color: #333;
+  background-color: var(--background-color);
+  color: rgb(119, 10, 10);
 }
 body {
   margin: 0;

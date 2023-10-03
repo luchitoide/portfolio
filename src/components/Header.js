@@ -91,6 +91,11 @@ const Header = () => {
   const toggleTheme = () => {
     setIsDarkTheme(!isDarkTheme);
     // Aquí puedes agregar la lógica para cambiar el tema (clase de CSS, contexto, etc.).
+    if (!isDarkTheme) {
+      document.documentElement.style.setProperty("--background-color", "#fff");
+    } else {
+      document.documentElement.style.setProperty("--background-color", "#333");
+    }
   };
 
   const handleNavLinkClick = (sectionId) => {

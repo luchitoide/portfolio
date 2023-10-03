@@ -3,6 +3,7 @@ import styled from "styled-components";
 
 const AboutSection = styled.section`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+  background: #444;
   padding: 2rem;
   min-height: 100vh;
   display: flex;

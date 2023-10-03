@@ -1,8 +1,8 @@
 import React from "react";
 import styled from "styled-components";
-import linkedinIcon from "../assets/icons/linkedin.svg";
-import githubIcon from "../assets/icons/github.svg";
-import emailIcon from "../assets/icons/email.svg";
+import { BiMailSend } from "react-icons/bi";
+
+import { SiLinkedin, SiGithub } from "@icons-pack/react-simple-icons";
 
 const IntroductionContainer = styled.section`
   color: white;
@@ -21,7 +21,6 @@ const IntroductionContainer = styled.section`
     justify-content: center;
   }
 `;
-
 
 const IntroductionText = styled.p`
   font-size: 1.2rem;
@@ -59,6 +58,7 @@ const IntroductionText = styled.p`
 const IntroductionTitle = styled.h2`
   font-size: 2.5rem;
   max-width: 665px;
+  margin-bottom: 12px;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Efecto de sombra al título */
   white-space: nowrap;
   overflow: hidden;
@@ -126,14 +126,14 @@ const SocialIcons = styled.div`
 `;
 
 const SocialLink = styled.a`
-  img {
-    width: 40px;
-    height: 40px;
-    transition: opacity 0.2s ease;
+  font-size: 1.5rem;
+  color: #999;
+  cursor: pointer;
+  transition: transform 0.3s ease, color 0.3s ease;
 
-    &:hover {
-      opacity: 0.8;
-    }
+  &:hover {
+    color: #ff7f50; /* Cambia el color al pasar el cursor */
+    transform: scale(1.1); /* Efecto de zoom al pasar el cursor */
   }
 `;
 
@@ -146,9 +146,9 @@ const Introduction = () => {
         </IntroductionTitle>
         <IntroductionText>
           Ingeniero con pasión por la tecnología, autodidacta, y enfoque
-          especializado en el desarrollo backend. Poseo amplios conocimientos en
-          Python y Javascript, incluyendo diversos frameworks como React, C#
-          .NET y Ruby on Rails, entre otros.
+          especializado en el desarrollo backend. Poseo conocimientos en varios
+          lenguajes como Python, C# .NET y Ruby on Rails, y Javascript,
+          incluyendo diversos frameworks como React y NextJs.
         </IntroductionText>
       </div>
       <PersonalContainer>
@@ -162,21 +162,21 @@ const Introduction = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={linkedinIcon} alt="LinkedIn" />
+            <SiLinkedin />
           </SocialLink>
           <SocialLink
             href="https://github.com/luchitoide"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={githubIcon} alt="GitHub" />
+            <SiGithub />
           </SocialLink>
           <SocialLink
             href="mailto:luchitoiderp@gmail.com"
             target="_blank"
             rel="noopener noreferrer"
           >
-            <img src={emailIcon} alt="Correo electrónico" />
+            <BiMailSend />
           </SocialLink>
         </SocialIcons>
       </PersonalContainer>
