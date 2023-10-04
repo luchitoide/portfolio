@@ -9,7 +9,7 @@ function App() {
   return (
     <div className="max-w-7xl m-auto ">
       <GlobalStyles />
-      <div className="fixed z-100 w-full max-w-7xl">
+      <div className="fixed z-100 w-full max-w-7xl backdrop-blur-sm z-10">
         <Header />
       </div>
       <Introduction  />

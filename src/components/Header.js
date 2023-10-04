@@ -3,7 +3,6 @@ import styled from "styled-components";
 import { FaSun, FaMoon } from "react-icons/fa"; // Importa iconos para los temas
 
 const StyledNavbar = styled.nav`
-  backdrop-filter: blur(5px);
   display: flex;
   justify-content: space-between;
   align-items: center;

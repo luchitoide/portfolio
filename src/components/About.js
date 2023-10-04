@@ -23,21 +23,21 @@ const Titles = styled.div`
 
 const ContentWrapper = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   max-width: 820px;
 `;
 
-const EducationContainer = styled.div`
-  flex: 1;
-  padding: 1rem;
-`;
-
 const VerticalLine = styled.div`
-  border-left: 4px solid #ff7f50;
-  height: 500px;
+  border-left: 2px solid #ff7f50;
+  border-right: 2px solid #ff7f50;
+  height: 50dvh;
+  max-height: 500px;
   position: relative;
+  @media (max-width: 430px) {
+    height: 40dvh;
+  }
 `;
 
 const Circle = styled.div`
@@ -51,19 +51,18 @@ const Circle = styled.div`
   justify-content: center;
   align-items: center;
   font-size: 20px;
+  @media (max-width: 430px) {
+    width: 30px;
+    height: 30px;
+    font-size: 15px;
+  }
 `;
 
-const ExperienceContainer = styled.div`
-  flex: 1;
+const AboutItem = styled.div`
+  position: absolute;
+  max-width: 385px;
   padding: 1rem;
-`;
-
-const EducationItem = styled.div`
-  margin-bottom: 2rem;
-  margin-right: 1rem;
-  padding: 1rem;
-  background-color: #222;
-  color: rgb(255 255 255);
+  background-color: var(--project-color);
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
 `;
@@ -71,92 +70,109 @@ const EducationItem = styled.div`
 const Title = styled.h3`
   font-size: 18px;
   margin-bottom: 0.25rem;
+  @media (max-width: 730px) {
+    font-size: 16px;
+  }
+  @media (max-width: 430px) {
+    font-size: 10px;
+  }
 `;
 
 const Entity = styled.p`
   font-size: 16px;
-
   margin-bottom: 0.25rem;
+  @media (max-width: 730px) {
+    font-size: 14px;
+  }
+  @media (max-width: 430px) {
+    font-size: 8px;
+  }
 `;
 
 const Date = styled.p`
   font-size: 16px;
   color: #555;
+  @media (max-width: 730px) {
+    font-size: 14px;
+  }
+  @media (max-width: 430px) {
+    font-size: 8px;
+  }
 `;
-
-const ExperienceItem = styled.div`
-  margin-bottom: 2rem;
-  margin-left: 1rem;
-  padding: 1rem;
-  background-color: #222;
-  color: rgb(255 255 255);
-  border-radius: 5px;
-  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
-`;
-
-const Position = styled.h3`
-  font-size: 18px;
-  margin-bottom: 0.25rem;
-`;
-
-const Company = styled.p`
-  font-size: 16px;
-
-  margin-bottom: 0.25rem;
-`;
-
-const ExperienceDate = styled.p`
-  font-size: 16px;
-  color: #555;
-`;
-
 
 const About = () => {
   return (
     <AboutSection id="about">
       <h2 className="text-4xl mb-10 text-center">Sobre Mi</h2>
       <Titles>
-        <h4 className="text-2xl mb-10 text-center">Estudios</h4>
-        <h4 className="text-2xl mb-10 text-center">Experiencia</h4>
+        <h4 className="text-2xl mb-10 text-center flex-1">Estudios</h4>
+        <h4 className="text-2xl mb-10 text-center flex-1">Experiencia</h4>
       </Titles>
       <ContentWrapper>
-        <EducationContainer>
-          <EducationItem>
+        <VerticalLine>
+          <AboutItem
+            style={{
+              top: "0%",
+              left: "100%",
+              transform: "translateX(10%)",
+              width: "40vw",
+            }}
+          >
+            <Title>Tutor de Programación</Title>
+            <Entity>Kodland</Entity>
+            <Date>abril 2023 - Actualidad</Date>
+          </AboutItem>
+          <Circle style={{ top: "0%", transform: "translateX(-50%)" }}>
+            <FaBriefcase /> {/* Icono para estudios */}
+          </Circle>
+          <AboutItem
+            style={{
+              top: "33%",
+              right: "100%",
+              transform: "translateX(-10%)",
+              width: "40vw",
+            }}
+          >
             <Title>Curso de Desarrollo Full-Stack JavaScript</Title>
             <Entity>Platzi</Entity>
             <Date>Noviembre 2022 - Julio 2023</Date>
-          </EducationItem>
-          <EducationItem>
+          </AboutItem>
+          <Circle style={{ top: "33%", transform: "translateX(-50%)" }}>
+            <FaGraduationCap /> {/* Icono para estudios */}
+          </Circle>
+          <AboutItem
+            style={{
+              top: "66%",
+              left: "100%",
+              transform: "translateX(10%)",
+              width: "40vw",
+            }}
+          >
+            <Title>Ingeniero de Soporte It</Title>
+            <Entity>Serviexchange</Entity>
+            <Date>abril 2021 - Actualidad</Date>
+          </AboutItem>
+          <Circle style={{ top: "66%", transform: "translateX(-50%)" }}>
+            <FaBriefcase /> {/* Icono para estudios */}
+          </Circle>
+          <AboutItem
+            style={{
+              top: "99%",
+              right: "100%",
+              transform: "translateX(-10%)",
+              width: "40vw",
+            }}
+          >
             <Title>Ingeniería Biomédica</Title>
             <Entity>
               Universidad del Rosario - Escuela Colombiana de Ingeniería
             </Entity>
-            <Date> Enero 2012- Diciembre 2018</Date>
-          </EducationItem>
-        </EducationContainer>
-        <VerticalLine>
-          <Circle style={{ top: "20%", transform: "translateX(-57%)" }}>
-            <FaGraduationCap /> {/* Icono para estudios */}
-          </Circle>
-          <Circle style={{ top: "50%", transform: "translateX(-57%)" }}>
-            <FaBriefcase /> {/* Icono para estudios */}
-          </Circle>
-          <Circle style={{ top: "80%", transform: "translateX(-57%)" }}>
+            <Date>Enero 2012- Diciembre 2018</Date>
+          </AboutItem>
+          <Circle style={{ top: "99%", transform: "translateX(-50%)" }}>
             <FaGraduationCap /> {/* Icono para experiencia */}
           </Circle>
         </VerticalLine>
-        <ExperienceContainer>
-          <ExperienceItem>
-            <Position>Tutor de Programación</Position>
-            <Company>Kodland</Company>
-            <ExperienceDate>abril 2023 - Actualidad</ExperienceDate>
-          </ExperienceItem>
-          <ExperienceItem>
-            <Position>Ingeniero de Soporte It</Position>
-            <Company>Serviexchange</Company>
-            <ExperienceDate>abril 2021 - Actualidad</ExperienceDate>
-          </ExperienceItem>
-        </ExperienceContainer>
       </ContentWrapper>
     </AboutSection>
   );
