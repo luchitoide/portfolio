@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import {
   FaGraduationCap, // Importa ícono para estudios
   FaBriefcase, // Importa ícono para experiencia
 } from "react-icons/fa";
+import Modal from "./Modal";
 
 const AboutSection = styled.section`
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
@@ -36,7 +37,7 @@ const VerticalLine = styled.div`
   max-height: 500px;
   position: relative;
   @media (max-width: 430px) {
-    height: 40dvh;
+    height: 40vh;
   }
 `;
 
@@ -65,6 +66,7 @@ const AboutItem = styled.div`
   background-color: var(--project-color);
   border-radius: 5px;
   box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
 `;
 
 const Title = styled.h3`
@@ -74,7 +76,7 @@ const Title = styled.h3`
     font-size: 16px;
   }
   @media (max-width: 430px) {
-    font-size: 10px;
+    font-size: 12px;
   }
 `;
 
@@ -85,7 +87,7 @@ const Entity = styled.p`
     font-size: 14px;
   }
   @media (max-width: 430px) {
-    font-size: 8px;
+    font-size: 10px;
   }
 `;
 
@@ -96,11 +98,23 @@ const Date = styled.p`
     font-size: 14px;
   }
   @media (max-width: 430px) {
-    font-size: 8px;
+    font-size: 10px;
   }
 `;
 
 const About = () => {
+  const [modalOpen, setModalOpen] = useState(false);
+  const [selectedItemTitle, setSelectedItemTitle] = useState(""); // Almacena el título del elemento seleccionado
+
+  const openModal = (title) => {
+    setSelectedItemTitle(title);
+    setModalOpen(true);
+  };
+
+  const closeModal = () => {
+    setModalOpen(false);
+  };
+
   return (
     <AboutSection id="about">
       <h2 className="text-4xl mb-10 text-center">Sobre Mi</h2>
@@ -111,6 +125,7 @@ const About = () => {
       <ContentWrapper>
         <VerticalLine>
           <AboutItem
+            onClick={() => openModal(1)}
             style={{
               top: "0%",
               left: "100%",
@@ -126,6 +141,7 @@ const About = () => {
             <FaBriefcase /> {/* Icono para estudios */}
           </Circle>
           <AboutItem
+            onClick={() => openModal(2)}
             style={{
               top: "33%",
               right: "100%",
@@ -133,7 +149,7 @@ const About = () => {
               width: "40vw",
             }}
           >
-            <Title>Curso de Desarrollo Full-Stack JavaScript</Title>
+            <Title>Curso de Desarrollador Full-Stack JavaScript</Title>
             <Entity>Platzi</Entity>
             <Date>Noviembre 2022 - Julio 2023</Date>
           </AboutItem>
@@ -141,6 +157,7 @@ const About = () => {
             <FaGraduationCap /> {/* Icono para estudios */}
           </Circle>
           <AboutItem
+            onClick={() => openModal(3)}
             style={{
               top: "66%",
               left: "100%",
@@ -156,6 +173,7 @@ const About = () => {
             <FaBriefcase /> {/* Icono para estudios */}
           </Circle>
           <AboutItem
+            onClick={() => openModal(4)}
             style={{
               top: "99%",
               right: "100%",
@@ -174,6 +192,11 @@ const About = () => {
           </Circle>
         </VerticalLine>
       </ContentWrapper>
+      <Modal
+        isOpen={modalOpen}
+        onClose={closeModal}
+        itemTitle={selectedItemTitle}
+      />
     </AboutSection>
   );
 };

@@ -99,6 +99,44 @@ const IntroductionTitle = styled.h2`
   }
 `;
 
+const DownloadButton = styled.a`
+  display: inline-block;
+  background-color: #ff7f50;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: #ff5733; /* Cambia el color al pasar el cursor */
+  }
+  animation: fadeInText 2s ease backwards;
+  animation-delay: 3s;
+
+  @keyframes fadeInText {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @media (max-width: 740px) {
+    font-size: 1.1rem;
+  }
+
+  @media (max-width: 600px) {
+    font-size: 0.83rem;
+  }
+`;
+
 const PersonalContainer = styled.div`
   display: flex;
   flex-direction: column;
@@ -111,7 +149,7 @@ const IntroductionImage = styled.img`
   width: 100%; /* Porcentaje relativo al contenedor padre */
   max-width: 250px;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.8);
 
   @media (max-width: 600px) {
     width: 200px;
@@ -149,6 +187,13 @@ const Introduction = () => {
           lenguajes como Python, C# .NET, Ruby on Rails y Javascript,
           incluyendo diversos frameworks como React y NextJs.
         </IntroductionText>
+        <DownloadButton
+          href="https://drive.google.com/drive/folders/1R3iM-qMnTqAFb2HR8lOysq2XdqE-cQvo?usp=sharing"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Descargar CV
+        </DownloadButton>
       </div>
       <PersonalContainer>
         <IntroductionImage
