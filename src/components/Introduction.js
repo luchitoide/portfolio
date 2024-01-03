@@ -182,10 +182,11 @@ const Introduction = () => {
           Luis Ramirez : Desarrollador Full Stack
         </IntroductionTitle>
         <IntroductionText>
-          Ingeniero con pasión por la tecnología, autodidacta y enfoque
-          especializado en el desarrollo backend. Poseo conocimientos en varios
-          lenguajes como Python, C# .NET, Ruby on Rails y Javascript,
-          incluyendo diversos frameworks como React y NextJs.
+          Ingeniero autodidacta con pasión por la tecnología. Me desenvuelvo en
+          el mundo del desarrollo con habilidades en Python, C# .NET, Ruby on
+          Rails y Javascript, junto con frameworks como React y Angular. También
+          me encanta el mundo de los videojuegos, por eso disfruto la creación
+          con herramientas como Unity.
         </IntroductionText>
         <DownloadButton
           href="https://drive.google.com/drive/folders/1R3iM-qMnTqAFb2HR8lOysq2XdqE-cQvo?usp=sharing"

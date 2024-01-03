@@ -124,10 +124,26 @@ const About = () => {
       </Titles>
       <ContentWrapper>
         <VerticalLine>
+        <AboutItem
+            onClick={() => openModal(5)}
+            style={{
+              top: "0%",
+              right: "100%",
+              transform: "translateX(-10%)",
+              width: "40vw",
+            }}
+          >
+            <Title>Diplomado FullStack Developer</Title>
+            <Entity>Universidad Piloto de Colombia</Entity>
+            <Date>Agosto 2023 - Noviembre 2023</Date>
+          </AboutItem>
+          <Circle style={{ top: "0%", transform: "translateX(-50%)" }}>
+            <FaGraduationCap />
+          </Circle>
           <AboutItem
             onClick={() => openModal(1)}
             style={{
-              top: "0%",
+              top: "25%",
               left: "100%",
               transform: "translateX(10%)",
               width: "40vw",
@@ -135,15 +151,15 @@ const About = () => {
           >
             <Title>Tutor de Programación</Title>
             <Entity>Kodland</Entity>
-            <Date>abril 2023 - Actualidad</Date>
+            <Date>Abril 2023 - Diciembre 2023</Date>
           </AboutItem>
           <Circle style={{ top: "0%", transform: "translateX(-50%)" }}>
-            <FaBriefcase /> {/* Icono para estudios */}
+            <FaBriefcase /> {/* Icono para trabajos */}
           </Circle>
           <AboutItem
             onClick={() => openModal(2)}
             style={{
-              top: "33%",
+              top: "50%",
               right: "100%",
               transform: "translateX(-10%)",
               width: "40vw",
@@ -159,7 +175,7 @@ const About = () => {
           <AboutItem
             onClick={() => openModal(3)}
             style={{
-              top: "66%",
+              top: "75%",
               left: "100%",
               transform: "translateX(10%)",
               width: "40vw",

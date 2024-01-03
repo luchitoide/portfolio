@@ -6,6 +6,8 @@ import {
   SiRubyonrails,
   SiBootstrap,
   SiNextdotjs,
+  SiUnity,
+  SiCsharp,
 } from "@icons-pack/react-simple-icons";
 import { register } from "swiper/element/bundle";
 
@@ -19,9 +21,19 @@ const technologyIcons = {
   rails: <SiRubyonrails />,
   bootstrap: <SiBootstrap />,
   nextjs: <SiNextdotjs />,
+  csharp: <SiCsharp />,
+  unity: <SiUnity/>,
 };
 
 const projects = [
+  {
+    title: "Swipe and Snow",
+    description:
+      "It is a android game made in Unity where you control a snowball that must avoid collisions",
+    technologies: ["unity", "csharp"],
+    thumbnail: require("../assets/projects/snow.png"),
+    url: "https://play.google.com/store/apps/details?id=com.T3bh.SwipeSnow",
+  },
   {
     title: "To Do List",
     description:
@@ -63,15 +75,6 @@ const projects = [
     technologies: ["nextjs", "firebase", "css", "typescript"],
     thumbnail: "https://www.provincia.vicenza.it/immagini/work_in_porgress_.jpg/image",
     url: "https://funny-chat-16bf8.firebaseapp.com/",
-  },
-
-  {
-    title: "Project 6",
-    description:
-      "thinking....",
-    technologies: ["rails", "js", "css", "bootstrap"],
-    thumbnail: "https://www.provincia.vicenza.it/immagini/work_in_porgress_.jpg/image",
-    url: "https://blogsito.onrender.com/",
   },
   // Agrega más proyectos aquí
 ];

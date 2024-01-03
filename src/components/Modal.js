@@ -127,6 +127,17 @@ const Modal = ({ isOpen, onClose, itemTitle }) => {
         "Aprendizaje y programación de microcontroladores PIC para diversos proyectos.",
       ],
     };
+  }else if (itemTitle === 5) {
+    itemDetails = {
+      title: "Diplomado FullStack Developer",
+      entity: "Universidad Piloto de Colombia",
+      date: "Agosto 2023 - Noviembre 2023",
+      details: [
+        "Manejo de base de datos con Microsfot SQL Server.",
+        "Programación Backend con lenguaje C#.NET.",
+        "Programación Front-end con Angular 16.",
+      ],
+    };
   }
   // Agrega más condiciones para otros títulos si es necesario
 
