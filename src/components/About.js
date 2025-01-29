@@ -125,9 +125,25 @@ const About = () => {
       <ContentWrapper>
         <VerticalLine>
         <AboutItem
-            onClick={() => openModal(5)}
+            onClick={() => openModal(6)}
             style={{
               top: "0%",
+              left: "100%",
+              transform: "translateX(10%)",
+              width: "40vw",
+            }}
+          >
+            <Title>Analista de Soporte It</Title>
+            <Entity>Transunion</Entity>
+            <Date>Agosto 2024 - Presente</Date>
+          </AboutItem>
+          <Circle style={{ top: "0%", transform: "translateX(-50%)" }}>
+            <FaBriefcase /> {/* Icono para trabajos */}
+          </Circle>
+        <AboutItem
+            onClick={() => openModal(5)}
+            style={{
+              top: "20%",
               right: "100%",
               transform: "translateX(-10%)",
               width: "40vw",
@@ -137,29 +153,29 @@ const About = () => {
             <Entity>Universidad Piloto de Colombia</Entity>
             <Date>Agosto 2023 - Noviembre 2023</Date>
           </AboutItem>
-          <Circle style={{ top: "0%", transform: "translateX(-50%)" }}>
+          <Circle style={{ top: "20%", transform: "translateX(-50%)" }}>
             <FaGraduationCap />
           </Circle>
           <AboutItem
-            onClick={() => openModal(1)}
+            onClick={() => openModal(3)}
             style={{
-              top: "25%",
+              top: "40%",
               left: "100%",
               transform: "translateX(10%)",
               width: "40vw",
             }}
           >
-            <Title>Tutor de Programación</Title>
-            <Entity>Kodland</Entity>
-            <Date>Abril 2023 - Diciembre 2023</Date>
+            <Title>Ingeniero de Soporte It</Title>
+            <Entity>Serviexchange</Entity>
+            <Date>Abril 2021 - Agosto 2024</Date>
           </AboutItem>
-          <Circle style={{ top: "0%", transform: "translateX(-50%)" }}>
+          <Circle style={{ top: "40%", transform: "translateX(-50%)" }}>
             <FaBriefcase /> {/* Icono para trabajos */}
           </Circle>
           <AboutItem
             onClick={() => openModal(2)}
             style={{
-              top: "50%",
+              top: "60%",
               right: "100%",
               transform: "translateX(-10%)",
               width: "40vw",
@@ -169,23 +185,23 @@ const About = () => {
             <Entity>Platzi</Entity>
             <Date>Noviembre 2022 - Julio 2023</Date>
           </AboutItem>
-          <Circle style={{ top: "33%", transform: "translateX(-50%)" }}>
+          <Circle style={{ top: "60%", transform: "translateX(-50%)" }}>
             <FaGraduationCap /> {/* Icono para estudios */}
           </Circle>
           <AboutItem
-            onClick={() => openModal(3)}
+            onClick={() => openModal(1)}
             style={{
-              top: "75%",
+              top: "80%",
               left: "100%",
               transform: "translateX(10%)",
               width: "40vw",
             }}
           >
-            <Title>Ingeniero de Soporte It</Title>
-            <Entity>Serviexchange</Entity>
-            <Date>abril 2021 - Actualidad</Date>
+            <Title>Tutor de Programación</Title>
+            <Entity>Kodland</Entity>
+            <Date>Abril 2023 - Diciembre 2023</Date>
           </AboutItem>
-          <Circle style={{ top: "66%", transform: "translateX(-50%)" }}>
+          <Circle style={{ top: "80%", transform: "translateX(-50%)" }}>
             <FaBriefcase /> {/* Icono para estudios */}
           </Circle>
           <AboutItem

@@ -104,7 +104,7 @@ const Modal = ({ isOpen, onClose, itemTitle }) => {
     itemDetails = {
       title: "Ingeniero de Soporte It",
       entity: "Serviexchange",
-      date: "abril 2021 - Actualidad",
+      date: "Abril 2021 - Agosto 2024",
       details: [
         "Análisis de datos a través de aplicación codificada en Google Script.",
         "Pruebas de software en JavaScript / Django.",
@@ -136,6 +136,21 @@ const Modal = ({ isOpen, onClose, itemTitle }) => {
         "Manejo de base de datos con Microsfot SQL Server.",
         "Programación Backend con lenguaje C#.NET.",
         "Programación Front-end con Angular 16.",
+      ],
+    };
+  }else if (itemTitle === 6) {
+    itemDetails = {
+      title: "Analista de Soporte It",
+      entity: "Transunion",
+      date: "Agosto 2024 - Actualidad",
+      details: [
+        "Gestionar tickets utilizando la aplicación Remedy y asegurar una resolución oportuna.",
+        "Realizar análisis mediante consultas en la base de datos Oracle SQL para respaldar la solución de problemas y la toma de decisiones.",
+        "Probar servicios web (SOAP y REST) utilizando Postman para validar la funcionalidad y garantizar la calidad.",
+        "Escalar casos complejos al Nivel 2 o a equipos especializados para soporte avanzado.",
+        "Asistir en la solución de problemas y resolución de incidencias de software para minimizar el tiempo de inactividad.",
+        "Brindar soporte a los usuarios finales en la configuración y mantenimiento de aplicaciones.",
+        "Proporcionar soporte al cliente a través de llamadas telefónicas, manteniendo un alto nivel de satisfacción del cliente con soluciones efectivas y oportunas."
       ],
     };
   }
